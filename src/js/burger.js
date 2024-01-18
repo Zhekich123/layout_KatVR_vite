@@ -1,4 +1,5 @@
 'use strict';
+import '../scss/styles.scss';
 
 const burgerIcon = document.querySelector('.navbar-toggler--icon');
 const burgerTogler = document.querySelector('.navbar-toggler');

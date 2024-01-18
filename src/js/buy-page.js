@@ -1,4 +1,5 @@
 'use strict';
+import '../scss/styles.scss';
 
 const choosedQuanity = document.querySelector('.btn-list-quanity');
 const quanities = document.querySelectorAll('.dropdown-item--quanity');

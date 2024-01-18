@@ -1,4 +1,5 @@
 'use strict';
+import '../scss/styles.scss';
 
 const arrows = document.querySelectorAll('.arrow-item');
 const questionDescriptions = document.querySelectorAll('.question-description');

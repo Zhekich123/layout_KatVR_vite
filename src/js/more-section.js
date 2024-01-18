@@ -1,4 +1,5 @@
 'use strict';
+import '../scss/styles.scss';
 
 const moreButton = document.querySelector('.banner__more');
 const moreArrow = document.querySelector('.more-arrow');

@@ -1,4 +1,5 @@
 'use strict';
+import '../scss/styles.scss';
 
 const slideCount = document.querySelector('.slider__count--start');
 const next = document.querySelector('.carousel-control-next');

@@ -1,4 +1,5 @@
 'use strict';
+import '../scss/styles.scss';
 
 const choosedLanguage = document.querySelector('.choosed-language');
 const languages = document.querySelectorAll('.dropdown-item--language');
