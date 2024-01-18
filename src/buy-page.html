@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Kate VR buy product</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./scss/styles.scss">
+    <script type="module" src="./js/main.js"></script>
+  </head>
+<body class="body-buy">
+  <header class="header-buy">
+    <div class="container container-buy">
+      <img src="./images/logo.svg" class="logo-img" alt="logo">
+      <a href="./buy-page.html" class="page__link">Place Order</a>
+      <a href="./checkout.html" class="page__link">Pay</a>
+      <a href="./thanks-page.html" class="page__link page__link--complete">Order Complete</a>
+    </div>
+  </header>
+  <main class="main-buy">
+    <section class="data">
+      <div class="container container-data">
+        <div class="section-wrapper">
+          <div class="img-wrapper">
+            <img class="kateVR-img"
+            src="./images/banner-small.png"
+            alt="kate-vr-product"
+            >
+
+            <div class="quanity-price">
+              <div class="quanity">
+                <div class="quanity-text"></div>
+                <label class="label-dropdown" for="#dropdown-quanity">Quanity</label>
+                <div id="dropdown-quanity" class="dropdown dropdown-quanity">
+                  <div class="btn btn-list btn-list-quanity choosed-quanity" 
+                  type="button" 
+                  data-bs-toggle="dropdown" 
+                  aria-expanded="false">
+                    1
+                    <img class="arrow-list arrow-list--quanity" src="./images/banner-arrow.svg" alt="arrow">
+                  </div>
+                  <ul class="dropdown-menu dropdown-menu--quanity">
+                    <li class="dropdown-item dropdown-item--quanity" data-value="1">1</li>
+                    <li class="dropdown-item dropdown-item--quanity" data-value="2">2</li>
+                    <li class="dropdown-item dropdown-item--quanity" data-value="3">3</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="price">
+                <label for="#price" class="label-dropdown">Price</label>
+                <div class="price-number" id="price">$ <span class="price-data">1200</span></div>
+              </div>
+            </div>
+          </div>
+          <form action="#" class="form-buy">
+            <div class="form-1">
+              <label class="label" for="#name"></label>
+              <input type="text" id="name" placeholder="First Name*" required>
+              <label class="label" for="#email"></label>
+              <input type="email" id="email" placeholder="Email*" required>
+              <label class="label-dropdown" for="#dropdown">Country*</label>
+              <div id="dropdown" class="dropdown">
+                <div class="btn btn-list county-choose" 
+                type="button" 
+                data-bs-toggle="dropdown" 
+                aria-expanded="false">
+                Ukraine
+                  <img class="arrow-list arrow-list--country" src="./images/banner-arrow.svg" alt="arrow">
+                </div>
+                <ul class="dropdown-menu">
+                  <li class="dropdown-item dropdown-item--country" data-value="Ukraine">Ukraine</li>
+                  <li class="dropdown-item dropdown-item--country" data-value="USA">USA</li>
+                  <li class="dropdown-item dropdown-item--country" data-value="Wakanda">Wakanda</li>
+                </ul>
+              </div>
+              <label class="label" for="#adress"></label>
+              <input type="text" id="adress" required placeholder="Shipping Adress*">
+              <a href="./checkout.html" type="button" class="btn btn-info text-light button-next button-next--desk">Next</a>
+            </div>
+            <div class="form-2">
+              <label class="label" for="#last-name"></label>
+              <input type="text" id="last-name" placeholder="Last Name*" required>
+              <label class="label" for="#phone-number"></label>
+              <input type="tel" id="phone-number" placeholder="Phone Number*" required>
+              <label class="label-dropdown" for="#dropdown">City*</label>
+              <div id="dropdown" class="dropdown">
+                <div class="btn btn-list city-choose" 
+                type="button" 
+                data-bs-toggle="dropdown" 
+                aria-expanded="false">Berezivka
+                  <img class="arrow-list arrow-list--country" src="./images/banner-arrow.svg" alt="arrow">
+                </div>
+                <ul class="dropdown-menu">
+                  <li class="dropdown-item dropdown-item--city" data-value="Berezivka">Berezivka</li>
+                  <li class="dropdown-item dropdown-item--city" data-value="Zhmerinka">Zhmerinka</li>
+                  <li class="dropdown-item dropdown-item--city" data-value="Brytivka">Brytivka</li>
+                </ul>
+              </div>
+              <label class="label" for="#adress"></label>
+              <input type="text" id="adress" placeholder="Shipping Adress 2">
+              <a href="./checkout.html" type="button" class="btn btn-info text-light button-next button-next--mob">Next</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+  <script src="./js/buy-page.js"></script>
+</body>
+</html>

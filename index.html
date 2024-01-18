@@ -1,0 +1,624 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kate VR</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.">
+  <link rel="stylesheet" href="./src/scss/styles.scss">
+</head>
+
+<body>
+  <header class="header">
+    <div class="container header-container">
+      <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">
+            <img src="./src/images/logo.svg" alt="logo">
+          </a>
+
+          <div class="dropdown">
+            <div class="btn btn-secondary dropdown-toggle choosed-language" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              EN
+            </div>
+
+            <ul class="dropdown-menu">
+              <li class="dropdown-item dropdown-item--language" data-value="EN">EN</li>
+              <li class="dropdown-item dropdown-item--language" data-value="UA">UA</li>
+              <li class="dropdown-item dropdown-item--language" data-value="EST">EST</li>
+            </ul>
+          </div>
+
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler--icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active text-light" aria-current="page" href="#about">About</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link text-light" href="#tech">Tech</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link text-light" href="#benefits">Benefits</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link text-light" href="#contacts">Contacts</a>
+              </li>
+
+              <li class="nav-item nav-item--lang">
+                <div class="dropdown dropdown--eng">
+                  <div class="btn btn-secondary dropdown-toggle choosed-language" role="button"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                    EN
+                  </div>
+
+                  <ul class="dropdown-menu">
+                    <li class="dropdown-item dropdown-item--language" data-value="EN">EN</li>
+                    <li class="dropdown-item dropdown-item--language" data-value="UA">UA</li>
+                    <li class="dropdown-item dropdown-item--language" data-value="EST">EST</li>
+                  </ul>
+                </div>
+              </li>
+
+              <li class="nav-item nav-item--faq">
+                <div class="header-description__faq header-description__faq--list" data-bs-toggle="modal"
+                  data-bs-target="#staticBackdrop">FAQ
+                </div>
+              </li>
+              <li class="nav-item nav-item--help">
+                <div class="header-description__help header-description__help--list" data-bs-toggle="modal"
+                  data-bs-target="#staticBackdrop--2">Help
+                </div>
+              </li>
+            </ul>
+
+          </div>
+        </div>
+      </nav>
+
+      <div class="header-content">
+        <div class="header-description">
+          <div class="header-description__title">
+            <div class="header-description__title--1">THE NEW START OF</div>
+            <div class="header-description__title--2">VR LOCOMOTION</div>
+          </div>
+          <div class="header-description__text">Discover the most comprehensive VR
+            Locomotion system, and unlock infinite motion in any games on any platforms!
+          </div>
+          <div class="header-description__price">1200$</div>
+          <div class="header-description__video">
+            <a class="play__link" href="#">
+              <img src="./src/images/play-button.svg" alt="play-button">
+            </a>
+          </div>
+          <a href="./src/buy-page.html" type="button" class="btn btn-info text-light button-more button-more--buy">Buy
+            Now</a>
+          <div class="header-description__addition">
+            <div class="header-description__faq header-description__faq--main" data-bs-toggle="modal"
+              data-bs-target="#staticBackdrop">FAQ
+            </div>
+
+            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+              aria-labelledby="staticBackdropLabel" aria-hidden="true">
+              <div class="modal-dialog modal-dialog--faq">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <div class="modal-title title--1 fs-5" id="staticBackdropLabel">FREQUENTLY ASKED</div>
+                    <div class="modal-title title--2 title--2__faq fs-5" id="staticBackdropLabel">QUESTIONS</div>
+                    <div class="button-close" data-bs-dismiss="modal" aria-label="Close">
+                      <img src="./src/images/close-button.svg" alt="close-button">
+                    </div>
+                  </div>
+                  <div class="modal-body">
+                    <div class="question question--1">
+                      <div class="question-menu">
+                        <div class="question-title">What makes KAT loco different from other systems?</div>
+                        <div class="more-arrow--question">
+                          <img class="arrow-item" src="./src/images/banner-arrow.svg" alt="more-arrow">
+                        </div>
+                      </div>
+                      <div class="question-description">Despite being approached from many different angles, all
+                        traditional
+                        VR Locomotion systems including roomscale, teleportation, and free locomotion failed to provide
+                        an optimal
+                        solution capable of integrating high immersion with convenience. KAT loco does all of that
+                        without repeating
+                        their flaws. Our system offers a complete and versatile solution for an affordable price what
+                        makes it a perfect
+                        choice for home-use. It is also 100% user friendly, wireless, universally compatible, and more!
+                        It even offers
+                        decoupled head and body directions!
+                      </div>
+                      <div class="question-update">Last updated: Wed, June 12 2019 7:07 PM UTC +03:00</div>
+                    </div>
+
+                    <div class="question">
+                      <div class="question-menu">
+                        <div class="question-title">Will it decrease my motion sickness?</div>
+                        <div class="more-arrow--question">
+                          <img class="arrow-item" src="./src/images/more-arrow.svg" alt="more-arrow">
+                        </div>
+                      </div>
+                      <div class="question-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                        Cum ullam quam nemo ipsum laborum? Minima voluptas corporis laboriosam labore doloribus aut
+                        voluptatem fugit eveniet dolores sed iure, ad error odio vel a vitae in, necessitatibus quam
+                        enim
+                        exercitationem fuga consequuntur. Doloribus blanditiis vel quod suscipit voluptatem odio neque
+                        labore
+                        obcaecati!
+                      </div>
+                      <div class="question-update">Last updated: Wed, June 12 2019 7:07 PM UTC +03:00</div>
+                    </div>
+
+                    <div class="question">
+                      <div class="question-menu">
+                        <div class="question-title">Which VR headsets is it compatible with?</div>
+                        <div class="more-arrow--question">
+                          <img class="arrow-item" src="./src/images/banner-arrow.svg" alt="more-arrow">
+                        </div>
+                      </div>
+                      <div class="question-description">Lorem ipsum dolor sit amet consectetur adipisicing
+                        elit. Sint, voluptas et. Quisquam, reprehenderit. Mollitia maxime nam vitae est nostrum non
+                        ipsum modi aspernatur aut? Minima modi consequuntur commodi maiores mollitia ullam, officiis
+                        voluptates quae iusto pariatur recusandae? Iusto velit blanditiis qui corrupti quas debitis
+                        explicabo
+                        assumenda voluptatibus accusantium. Debitis sint similique nisi! Laudantium, exercitationem
+                        possimus!
+                      </div>
+                      <div class="question-update">Last updated: Wed, June 12 2019 7:07 PM UTC +03:00</div>
+                    </div>
+
+                    <div class="question question--4">
+                      <div class="question-menu">
+                        <div class="question-title">Is it compatible with Oculus Quest?</div>
+                        <div class="more-arrow--question">
+                          <img class="arrow-item" src="./src/images/banner-arrow.svg" alt="more-arrow">
+                        </div>
+                      </div>
+                      <div class="question-description">Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                        Officia quidem error est, voluptatum doloremque aperiam suscipit sapiente perferendis quis
+                        consectetur,
+                        nihil laborum fugit necessitatibus, numquam voluptate ducimus temporibus. Consequatur, adipisci
+                        natus,
+                        commodi nemo quae nesciunt inventore accusamus perspiciatis molestiae autem excepturi corporis
+                        ratione
+                        ipsum, obcaecati tenetur fugiat at atque soluta asperiores dolores voluptate. Ducimus vitae
+                        aliquid
+                        earum cum, quia ratione.
+                      </div>
+                      <div class="question-update">Last updated: Wed, June 12 2019 7:07 PM UTC +03:00</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="header-description__help header-description__help--main" data-bs-toggle="modal"
+              data-bs-target="#staticBackdrop--2">Help
+            </div>
+          </div>
+        </div>
+
+        <div class="modal fade" id="staticBackdrop--2" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+          aria-labelledby="staticBackdropLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog--help">
+            <div class="modal-content">
+              <div class="modal-header modal-header--2">
+                <div class="modal-title title--1 fs-5" id="staticBackdropLabel">HOW CAN WE</div>
+                <div class="modal-title title--2 fs-5" id="staticBackdropLabel">HELP</div>
+                <div class="modal-title title--1 title--1__3 fs-5" id="staticBackdropLabel">YOU?</div>
+                <div class="button-close" data-bs-dismiss="modal" aria-label="Close">
+                  <img src="./src/images/close-button.svg" alt="close-button">
+                </div>
+              </div>
+              <div class="modal-body">
+                <p class="help-text">
+                  Welcome to our help center. Our goal is to make the process of getting
+                  acquainted and purchase as easy and pleasant as possible. Need help with your KAT VR
+                  loco product? Many product questions can be resolved by reviewing our Product Support <span
+                    class="faqs">FAQs</span>.
+                  <br>
+                  <br>
+                  Please also feel free to Contact Us directly should you need anything further. We’re happy to help.
+                </p>
+
+                <div class="info">
+                  <div class="info-title">Instruction manual</div>
+                  <div class="info-data">+86-0571-86105373</div>
+                </div>
+
+                <div class="info">
+                  <div class="info-title">Where to go for a warranty</div>
+                  <div class="info-data">global@katvr.com</div>
+                </div>
+
+                <div class="info info--3">
+                  <div class="info-title">Service Policy</div>
+                  <div class="info-data">overseas@katvr.com</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+
+        </div>
+
+        <div class="banner-section">
+          <img class="image-banner" src="./src/images/banner.svg" alt="banner">
+          <div class="banner__utilities justify-content-between">
+            <div class="more__elements">
+              <div class="banner__more">More</div>
+              <div class="more-arrow">
+                <img src="./src/images/banner-arrow.svg" alt="more-arrow">
+              </div>
+            </div>
+
+            <div class="banner__slider">
+              <div class="choose__section">
+                <div class="choose__previous">Previous</div>
+                <div class="choose__next">Next</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main class="main">
+    <section class="more-than-gaming">
+      <div class="container more-container">
+        <div class="section-title">
+          <div class="section-title--1">MORE THAN</div>
+          <div class="section-title--2">GAMING!</div>
+        </div>
+        <div class="title-description">This also made for people
+          who are interested in...
+        </div>
+
+        <div class="cards__description">
+          <div class="cards__description--1">
+            <div class="card">
+              <div class="card__image">
+                <img src="./src/images/education.svg" alt="education-image">
+              </div>
+              <div class="card__title">EDUCATION</div>
+              <div class="card__description">Create aducational simulations,
+                trainings and much more with unlimited virtual space and minimum
+                physical space
+              </div>
+            </div>
+          </div>
+          <div class="cards__description--2">
+            <div class="card">
+              <div class="card__image">
+                <img src="./src/images/realestate.svg" alt="education-image">
+              </div>
+              <div class="card__title">REAL ESTATE</div>
+              <div class="card__description">Desighn architectural projects in
+                a deeply realistic environment allowing visitors to freely walk around,
+                and feel their vibe
+              </div>
+            </div>
+          </div>
+          <div class="cards__description--3">
+            <div class="card">
+              <div class="card__image">
+                <img src="./src/images/fitness.svg" alt="education-image">
+              </div>
+              <div class="card__title">FITNESS</div>
+              <div class="card__description">Combine business with pleasure,
+                and discover countless ways to stay fit while playing your favorite
+                VR Games!
+              </div>
+            </div>
+          </div>
+          <div class="cards__description--4">
+            <div class="card">
+              <div class="card__image">
+                <img src="./src/images/social.svg" alt="education-image">
+              </div>
+              <div class="card__title">SOCIAL INTERACTIONS</div>
+              <div class="card__description">Hang out with your friends in
+                the virtual world when you can’t meet space requirements
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <a href="./src/buy-page.html" type="button" class="btn btn-info text-light button-more button-more-dis">Buy
+          Now</a>
+      </div>
+    </section>
+    <section class="about" id="about">
+      <div class="container about-container">
+        <div class="about__first-part justify-content-between">
+          <div class="slider">
+            <div class="slider__count">
+              <div class="slider__count--start">1</div>
+              <div class="slider__count--all-pictures">/5</div>
+            </div>
+
+            <div class="slider-wrapper">
+              <div id="carouselExampleFade" class="carousel slide carousel-fade">
+                <div class="carousel-inner">
+                  <div class="carousel-item active" data-value="1">
+                    <img src="./src/images/slider-img.png" class="image-item d-block w-430" alt="slider-image">
+
+                  </div>
+                  <div class="carousel-item" data-value="2">
+                    <img src="./src/images/slider-img-rotate.png" class="image-item d-block w-430" alt="slider-image">
+
+                  </div>
+                  <div class="carousel-item" data-value="3">
+                    <img src="./src/images/slider-img.png" class="image-item d-block w-430" alt="slider-image">
+
+                  </div>
+                  <div class="carousel-item" data-value="4">
+                    <img src="./src/images/slider-img-rotate.png" class="image-item d-block w-430" alt="slider-image">
+
+                  </div>
+                  <div class="carousel-item" data-value="5">
+                    <img src="./src/images/slider-img.png" class="image-item d-block w-430" alt="slider-image">
+
+                  </div>
+                </div>
+              </div>
+
+              <div class="banner__slider slider__about">
+                <div class="choose__section choose__section--about">
+                  <div class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade"
+                    data-bs-slide="prev">Previous
+                  </div>
+
+                  <div class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade"
+                    data-bs-slide="next">Next
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="about__text-block">
+            <div class="about__title">
+              <div class="about__title--1">ABOUT</div>
+              <div class="about__title--2">PRODUCT</div>
+            </div>
+            <div class="about__description">KAT loco is a foot-based VR
+              locomotion system that gives complete physical control over lower-body
+              actions, allowing you to freely walk, run, and carry out just any other
+              movement in virtual reality.
+            </div>
+            <div class="about-description__video">
+              <a class="play__link" href="#">
+                <img src="./src/images/play-button.svg" alt="play-button">
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="about__second-part justify-content-between">
+          <div class="about__text-block about__text-block-nice-to">
+            <div class="about__text-hello">Hello,</div>
+            <div class="about__title about__title-nice-to">
+              <div class="about__title--1">NICE TO MEET</div>
+              <div class="about__title--2">YOU!</div>
+            </div>
+            <div class="about__description about--nice-to">KAT VR is an independent
+              company dedicated to the research, development, and sales of VR Locomotion
+              products and solutions. Founded in 2013, we have quickly grown to become one
+              of the world’s leading professional suppliers of VR games’ & simulations’ equipment
+            </div>
+          </div>
+
+          <div class="about__us-rotate">
+            <img class="about__us--img" src="./src/images/about-us.png" alt="about-us">
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="tech" id="tech">
+      <div class="container tech-container">
+        <div class="tech__title justify-content-end">
+          <div class="tech__title--1">TECH</div>
+          <div class="tech__title--2">SPECS</div>
+        </div>
+
+        <div class="specs__body">
+          <div class="sensor">
+            <div class="sensor-title">SENSOR</div>
+            <div class="sensor-description">Weight: 35g/1.23oz each Dimension: 50mm/1.97in
+              24mm/0.94in Light: LED lights</div>
+          </div>
+
+          <img class="sensor-img" src="./src/images/sensor.svg" alt="sensor">
+          <img class="vr-img" src="./src/images/vr-item.svg" alt="vr-item">
+          <img class="battery-img" src="./src/images/batteries.svg" alt="batteries">
+
+          <div class="battery">
+            <div class="batteries-title">BATTERRIES</div>
+            <div class="batteries-description">Type: Lthium-lon polymer batteries Capacity:
+              370mAh Battery life: 10h of continuous use 150 hours on stand by Charging: Fast charging
+              - 1 hour Charging voltage and current: 5V = 0.5A
+            </div>
+          </div>
+        </div>
+
+        <div class="connection__body">
+          <div class="connection-text">
+            <div class="connection-title">CONNECTION</div>
+            <div class="connection-description">Wireless: Bluetooth 4.2 Signal range: 5m
+              Receiver: USB 2.0 and above
+            </div>
+          </div>
+          <img class="connection-img" src="./src/images/connection.svg" alt="connection">
+          <img class="ecliple-img" src="./src/images/eclipse.svg" alt="eclipse">
+        </div>
+      </div>
+    </section>
+    <section class="benefits" id="benefits">
+      <div class="container benefits-container">
+        <div class="benefits-title">
+          <div class="benefits-title--1">WHY</div>
+          <div class="benefits-title--2">CAT LOCO?</div>
+        </div>
+
+        <div class="cards__description">
+          <div class="cards__description--1">
+            <div class="card--benefits">
+              <div class="card__image">
+                <img src="./src/images/universally.svg" alt="universally-image">
+              </div>
+              <div class="card__title">UNIVERSALLY COMPATIBLE</div>
+              <div class="card__description card__description--universally">KAT Loco offers universal compatibility
+                across all major VR headsets and platforms allowing you to play any VR
+                game with support for Free Locomotion
+              </div>
+            </div>
+          </div>
+
+          <div class="cards__description--2">
+            <div class="card--benefits">
+              <div class="card__image">
+                <img src="./src/images/vr.svg" alt="vr-image">
+              </div>
+              <div class="card__title">VR/PC CONTROL PANEL</div>
+              <div class="card__description card__description--vr">Our Multifunctional Software allows
+                for quick access to KAT Loco’s control panel both from a computer
+                desktop, and directly from your VR headset.
+              </div>
+            </div>
+          </div>
+
+          <div class="cards__description--3">
+            <div class="card--benefits">
+              <div class="card__image">
+                <img src="./src/images/wireless.svg" alt="wireless-image">
+              </div>
+              <div class="card__title">WIRELESS SENSORS</div>
+              <div class="card__description card__description--wireless">What makes it even more advanced,
+                KAT Loco is entirely wireless, and comes with a complete system
+                of algorithms, super durable batteries and more!
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <a type="button" href="/src/buy-page.html" class="btn btn-info text-light buy__button">Buy Now</a>
+      </div>
+    </section>
+    <section class="contacts" id="contacts">
+      <div class="container contacts-container">
+        <div class="contacts-text">
+          <div class="questions">Have any questions?</div>
+          <div class="contacts-title">
+            <div class="contacts-title--1">GET IN</div>
+            <div class="contacts-title--2">TOUCH</div>
+          </div>
+          <div class="message-text">Our manager will reply you within 15 minutes</div>
+          <div class="number">+86-0571-86105373</div>
+          <div class="email--1">global@katvr.com</div>
+          <div class="email--2">overseas@katvr.com</div>
+        </div>
+
+        <div class="contact-form">
+          <form class="form" action="#">
+            <label class="form-label" for="name">
+              <input class="name" type="text" id="name" placeholder="Name*" required>
+            </label>
+
+            <label class="form-label" for="email">
+              <input class="email" type="email" id="email" placeholder="Email*" required>
+            </label>
+
+            <label class="form-label" for="phone">
+              <input class="phone" type="tel" id="phone" placeholder="Phone*" required>
+            </label>
+
+            <label class="form-label form-label-message" for="message">
+              <textarea name="message" id="message" cols="30" rows="5" placeholder="Message"></textarea>
+            </label>
+          </form>
+
+          <div class="contact-buttons">
+            .<button type="button" class="btn btn-info text-light contact__button">Contact Us</button>
+            <a class="arrow-up" href="#">
+              <img src="./src/images/arrow-up.svg" alt="arrow-up">
+            </a>
+          </div>
+          <div class="message-text__contact">Our manager will reply you within 15 minutes</div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="container footer-container">
+      <div class="footer-wrapper">
+        <div class="logo">
+          <img src="./src/images/logo.svg" alt="logo">
+        </div>
+        <ul class="nav__list nav__list--footer">
+          <li class="nav__item--footer">
+            <a class="nav__link" href="#about">About</a>
+          </li>
+          <li class="nav__item--footer">
+            <a class="nav__link" href="#tech">Tech</a>
+          </li>
+          <li class="nav__item--footer">
+            <a class="nav__link" href="#benefits">Benefits</a>
+          </li>
+          <li class="nav__item--footer-contacts">
+            <a class="nav__link" href="#contacts">Contacts</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="social__block">
+        <div class="text-mobile">
+          <div class="number number__footer">+86-0571-86105373</div>
+          <div class="email--1 email--1__footer">global@katvr.com</div>
+          <div class="email--2 email--2__footer">overseas@katvr.com</div>
+        </div>
+
+        <div class="social__wrapper">
+          <div class="social social__facebook">
+            <img src="./src/images/facebook.svg" alt="facebook">
+          </div>
+          <div class="social social__twitter">
+            <img src="./src/images/twitter.svg" alt="twitter">
+          </div>
+          <div class="social social__youtube">
+            <img src="./src/images/youtube.svg" alt="youtube">
+          </div>
+          <div class="social social__reddit">
+            <img src="./src/images/reddit.svg" alt="reddit">
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="./src/js/burger.js"></script>
+  <script src="./src/js/languages.js"></script>
+  <script src="./src/js/faq.js"></script>
+  <script src="./src/js/more-section.js"></script>
+  <script src="./src/js/slider.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
+    </script>
+</body>
+
+</html>

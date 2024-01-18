@@ -1,0 +1,2002 @@
+@import "bootstrap/scss/bootstrap";
+@import "./vars.scss";
+@import "./mixins.scss";
+
+
+// #region page
+body {
+  font-family: Inter;
+  scroll-behavior: smooth;
+}
+
+.container {
+  max-width: 1200px;
+
+  @include onTablet {
+    max-width: 768px;
+  }
+
+  @include onBigPhone {
+    max-width: 500px;
+    padding: 0 20px;
+  }
+}
+// #endregion
+// #region header
+// #region navigation
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #191536 0%, #000 100%);
+}
+
+.header-container {
+  position: relative;
+  margin: 0 20px;
+}
+
+.navbar-brand.inactive {
+  visibility: hidden;
+}
+
+.navbar-toggler {
+  position: relative;
+  border: none;
+  outline: none;
+  padding: 0;
+}
+
+.navbar-toggler:focus {
+  border: none;
+  outline: none;
+  padding: 0;
+  box-shadow: none;
+}
+
+.navbar {
+  padding-top: 47px;
+}
+
+.navbar-toggler--icon{
+  height: 2px;
+  width: 100%;
+  transform: scale(1);
+  background-color: #fff;
+  margin-right: 20px;
+}
+
+.navbar-toggler--icon::before, 
+.navbar-toggler--icon::after {
+  content: '';
+  position: absolute;
+  height: 1px;
+  width: 30px;
+  background-color: #fff;
+  transition: all 0.3s ease 0s;
+  margin-bottom: 5px;
+}
+
+.navbar-toggler--icon::before {
+  top: 5px;
+}
+
+.navbar-toggler--icon::after {
+  bottom: 0;
+}
+
+.navbar-toggler--icon.active span {
+  transform: translateX(100%) scale(0);
+}
+
+.navbar-toggler--icon.open::before {
+  top: 50%;
+  transform: rotate(-45deg) translate(0, -400%);
+}
+
+.navbar-toggler--icon.open::after {
+  bottom: 50%;
+  transform: rotate(45deg) translate(0, 400%);
+}
+
+.navbar-nav {
+
+  @include onTablet {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: -60px 0 0 70px;
+  }
+
+  @include onBigPhone {
+    margin: -60px 0 0 0;
+  }
+}
+
+.btn-secondary {
+  background: none;
+  width: 100%;
+  color: $contrast-color;
+  border: 0;
+  outline: 0;
+
+  @include onTablet {
+    display: none;
+  }
+}
+
+.btn-secondary:hover, 
+.btn-secondary:active,
+.dropdown-toggle.show {
+  background: none;
+}
+
+.btn-info {
+  width: 200px;
+  height: 48px;
+  margin-left: 37px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @include onTablet {
+    display: none;
+  }
+}
+
+.nav-item {
+  margin-left: 37px;
+
+  @include onTablet {
+    margin: 24px 0 0 40px;
+  }
+}
+
+.nav-item--lang {
+  display: none;
+}
+
+.nav-item--faq {
+  display: none;
+
+  @include onTablet {
+    display: inherit;
+  }
+}
+
+.nav-item--help {
+  display: none;
+
+  @include onTablet {
+    display: inherit;
+    margin-left: 0;
+  }
+}
+// #endregion
+// #region header content
+.header-container {
+
+  @include onTablet {
+    margin: 0;
+    padding: 0 34px;
+  }
+}
+
+.header-content {
+  display: flex;
+  margin: 116px 0 0 0;
+
+  @include onBigPhone {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 0 0 0;
+  }
+
+  @include onTablet {
+    margin: 55px 0 0 0;
+  }
+}
+
+.header-description {
+  @include onBigPhone {
+    order: 2;
+  }
+}
+
+.header-description__title {
+  font-size: 46px;
+
+  @include onTablet {
+    font-size: 26px;
+  }
+}
+
+.header-description__title--1 {
+  color: $white;
+  font-weight: 900;
+  white-space: nowrap;
+}
+
+.header-description__title--2 {
+  color: $contrast-color;
+  font-weight: 400;
+}
+
+.header-description__text {
+  margin: 19px 0 0 100px;
+  color: $text-color;
+  max-width: 336px;
+
+  @include onTablet {
+    margin: 17px 0 0 0;
+  }
+}
+
+.header-description__price {
+  color: $white;
+  font-size: 18px;
+  font-weight: 500;
+  margin: 19px 0 0 100px;
+
+  @include onTablet {
+    margin: 17px 0 0 0;
+  }
+}
+
+.header-description__video {
+  margin: 19px 0 0 90px;
+
+  @include onTablet {
+    margin: 17px 0 0 0;
+  }
+
+  @include onBigPhone {
+    margin: 19px 0 20px 0;
+  }
+}
+
+.header-description__addition {
+  display: flex;
+  margin: 84px 0 0 15px;
+}
+
+.header-description__faq,
+.header-description__help {
+  color: $white;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+}
+// #region modal faq
+.modal-dialog {
+  max-width: 880px;
+}
+
+.modal-dialog--faq {
+  margin: 60px auto;
+}
+
+.modal-content {
+  position: relative;
+  background-color: #191536;
+  max-width: 100%;
+  padding: 0 90px;
+
+  @include onTablet {
+    height: 100%;
+  }
+
+  @include onBigPhone {
+    padding: 0;
+  }
+}
+
+.modal-header {
+  flex-direction: column;
+  align-items: flex-start;
+  border-bottom: 0px;
+  margin-top: 60px;
+}
+
+.question {
+  border: 2px solid $contrast-color;
+  border-radius: 4px;
+  padding: 29px 18px;
+  margin-top: 15px;
+
+  @include onBigPhone {
+    padding: 30px 10px;
+    
+  }
+}
+
+.question--1 {
+  margin-top: 0;
+}
+
+.question--4 {
+  margin-bottom: 100px;
+}
+
+.arrow-item {
+  transform: rotate(-90deg);
+  transition: ease 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.arrow-item.active {
+  transform: rotate(0);
+}
+
+.question-menu {
+  display: flex;
+  justify-content: space-between;
+  height: 30px;
+}
+
+.question-title {
+  font-size: 16px;
+  font-weight: 400;
+  color: $contrast-color;
+  margin-bottom: 18px;
+}
+
+.question-description {
+  font-size: 16px;
+  font-weight: 400;
+  color: $text-color;
+  margin-bottom: 20px;
+  display: none;
+
+  @include onBigPhone {
+    margin-top: 28px;
+  }
+}
+
+.question-description.active {
+  display: inherit
+}
+
+.question-update {
+  font-size: 14px;
+  font-weight: 400;
+  color: #545454;
+  display: none;
+}
+
+.question-update.active {
+  display: inherit
+}
+
+.button-close {
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  cursor: pointer;
+}
+
+button.btn-close {
+  color: $white;
+}
+
+.title--1 {
+  font-weight: 900;
+  color: $white;
+  line-height: 130%;
+  font-size: 36px;
+}
+
+.title--2 {
+  font-weight: 400;
+  color: $contrast-color;
+  line-height: 130%;
+  font-size: 36px;
+}
+
+.modal-footer {
+  border-top: 0;
+}
+// #endregion
+// #region modal help
+.modal-dialog--help {
+  margin: 100px auto;
+}
+
+.modal-header--2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+}
+
+.title--2,
+.title--1__3 {
+  margin-left: 10px;
+}
+
+.title--2__faq {
+  margin-left: 0;
+
+}
+
+.help-text {
+  font-size: 16px;
+  font-weight: 400;
+  color: $text-color;
+}
+
+.faqs {
+  color: $contrast-color;
+}
+
+.info {
+  display: flex;
+  justify-content: space-between;
+  width: 350px;
+  margin-top: 30px;
+
+  @include onBigPhone {
+    flex-direction: column;
+  }
+}
+
+.info--3 {
+  margin-bottom: 80px;
+}
+
+.info-title {
+  color: $contrast-color;
+}
+
+.info-data {
+  color: $text-color;
+}
+
+.info-title,
+.info-data {
+  font-size: 16px;
+  font-weight: 400;
+}
+// #endregion
+
+.header-description__help {
+  margin-left: 40px;
+}
+
+.header-description__faq--main {
+
+  @include onTablet {
+    display: none;
+  }
+}
+
+.header-description__help--main {
+
+  @include onTablet {
+    display: none;
+  }
+}
+
+.banner-section {
+  @include onBigPhone {
+    display: flex;
+  }
+}
+
+.image-banner {
+  margin: -150px 0 0 0;
+  object-fit: cover;
+
+  @include onTablet {
+    width: 100%;
+  }
+
+  @include onBigPhone {
+    order: 1;
+    height: 100%;
+    object-fit: cover;
+    margin-top: 0;
+  }
+}
+
+.banner__utilities {
+  display: flex;
+}
+
+.more__elements {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.more-arrow {
+  margin: -5px 0 80px 0;
+  cursor: pointer;
+
+  @include onTablet {
+    display: none;
+  }
+}
+
+.banner__more {
+  text-decoration: none;
+  color: $contrast-color;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+
+  @include onTablet {
+    display: none;
+  }
+}
+
+.banner__slider {
+  display: flex;
+
+}
+
+.play__link {
+  text-decoration: none;
+}
+
+.choose__section {
+  position: relative;
+  display: flex;
+
+  @include onTablet {
+    display: none;
+  }
+}
+
+.choose__section::after {
+  position: absolute;
+  content: '';
+  width: 65%;
+  height: 1px;
+  background-color: $text-color;
+  bottom: 90px;
+}
+
+.choose__next {
+  margin: 0 117px 0 103px;
+}
+
+.choose__previous.active, 
+.choose__next.active {
+  color: $white;
+}
+
+.choose__previous, 
+.choose__next {
+  color: $text-color;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+}
+// #endregion
+// #endregion
+// #region more tnah gaming
+.more-than-gaming {
+  background: #05040B;
+  padding-top: 100px;
+  display: none;
+  transition: opacity 0.3s ease-in-out;
+
+  @include onTablet {
+    display: inherit;
+  }
+
+  @include onBigPhone {
+    padding-top: 20px;
+  }
+}
+
+.more-than-gaming.active {
+  display: inherit;
+}
+
+.more-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.section-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 36px;
+  font-weight: 900;
+
+  @include onBigPhone {
+    font-size: 21px;
+  }
+}
+
+.section-title--1 {
+  color: $white;
+}
+
+.section-title--2 {
+  color: $contrast-color;
+  margin-left: 6px;
+  font-weight: 400;
+}
+
+.title-description {
+  font-size: 14px;
+  font-weight: 400;
+  color: $contrast-color;
+
+  @include onBigPhone {
+    font-size: 12px;
+  }
+}
+
+.cards__description {
+  display: flex;
+  margin-bottom: 112px;
+
+  @include onTablet {
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 43px;
+  }
+}
+
+.card {
+  background-color: #05040B;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 84px 0 0 0;
+}
+
+.card__image {
+  margin: 0 0 32px 0;
+}
+
+.card__title {
+  margin-bottom: 21px;
+  font-size: 16px;
+  font-weight: 900;
+  color: $white;
+}
+
+.card__description {
+  text-align: center;
+  max-width: 250px;
+  font-size: 16px;
+  font-weight: 400;
+  color: $text-color;
+
+  @include onTablet {
+    max-width: 300px;
+  }
+}
+
+.cards__description--1,
+.cards__description--2,
+.cards__description--3,
+.cards__description--4 {
+  margin-right: 20px;
+}
+
+.button-more {
+  display: none;
+
+  @include onTablet {
+    display: inherit;
+    margin: 0 0 50px 0;
+    width: 60%;
+  }
+}
+
+.button-more-dis {
+  @include onBigPhone {
+    display: none;
+  }
+}
+
+.button-more--buy {
+  @include onBigPhone {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}
+// #endregion
+// #region about
+// #region first-part
+.about {
+  background: linear-gradient(135deg, #191536 0%, #000 100%);
+}
+
+.about-container {
+
+  @include onBigPhone {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.about__first-part {
+  display: flex;
+
+  @include onBigPhone {
+    flex-direction: column;
+  }
+}
+
+.slider {
+  position: relative;
+  padding-top: 105px;
+  display: flex;
+  margin: 0 0 0 200px;
+
+  @include onTablet {
+    margin: 0 0 0 0;
+  }
+}
+
+.slider__count {
+  display: flex;
+  font-size: 14px;
+  font-weight: 400;
+  color: $contrast-color;
+
+  @include onTablet {
+    display: none;
+  }
+}
+
+.choose__section--about {
+  left: 55px;
+  top: 25px;
+}
+
+.choose__section--about::after {
+  position: absolute;
+  content: '';
+  width: 65%;
+  height: 1px;
+  background-color: $text-color;
+  top: 0;
+}
+
+.slider-wrapper {
+  height: 290px;
+
+  @include onTablet {
+    max-width: 340px;
+  }
+}
+
+.carousel-inner {
+  margin-left: 23px;
+
+  @include onBigPhone {
+    margin-left: 20px;
+  }
+}
+
+.carousel-control-next {
+  left: 100px;
+}
+
+.carousel-item {
+  width: 0;
+}
+
+// .carousel-item-next {
+//   width: 0%;
+// }
+
+// .carousel-item-start {
+//   width: 100%;
+// }
+
+.carousel-item.active {
+  width: 100%;
+}
+
+.image-item {
+  width: 100%;
+}
+
+.about__title {
+  display: flex;
+  font-size: 36px;
+  margin: 105px 0 30px 0;
+
+  @include onTablet {
+    font-size: 21px;
+  }
+
+  @include onBigPhone {
+    margin: 0 0 30px 0;
+  }
+}
+
+.about__title--1 {
+  font-weight: 900;
+  color: $white;
+}
+
+.about__title--2 {
+  margin-left: 10px;
+  font-weight: 400;
+  color: $contrast-color;
+}
+
+.about__description {
+  max-width: 332px;
+  font-size: 16px;
+  font-weight: 400;
+  color: $text-color;
+  margin-bottom: 43px;
+
+  @include onTablet {
+    max-width: 340px;
+  }
+}
+// #endregion
+// #region second-part
+.about__second-part {
+  display: flex;
+
+  @include onTablet {
+    position: relative;
+  }
+
+  @include onBigPhone {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.about__text-block-nice-to {
+  margin: 226px 0 0 0;
+
+  @include onTablet {
+    margin: 90px 0 0 0;
+  }
+
+  @include onBigPhone {
+    margin: 40px 0 0 0;
+  }
+}
+
+.about__text-hello {
+  font-size: 14px;
+  font-weight: 400;
+  color: $contrast-color;
+  margin-bottom: 15px;
+
+  @include onTablet {
+    margin: 0 0 0 29px;
+  }
+
+  @include onBigPhone {
+    margin: 0 0 0 0;
+  }
+}
+
+.about__title-nice-to {
+  margin: 0 0 12px 0;
+
+  @include onTablet {
+    margin: 0 0 13px 29px;
+  }
+
+  @include onBigPhone {
+    margin: 0 0 22px 0;
+  }
+}
+
+.about--nice-to {
+
+  @include onTablet {
+    max-width: 460px;
+    padding-bottom: 20px;
+    margin: 0 0 43px 29px;
+  }
+
+  @include onBigPhone {
+    margin: 0 0 22px 0;
+    max-width: 340px;
+  }
+}
+
+.about__us-rotate {
+  margin: 237px 0 95px 0;
+
+  @include onTablet {
+    position: absolute;
+    left: 490px;
+    margin: 0;
+    max-width: 232px;
+    top: 90px;
+    box-sizing: border-box;
+  }
+
+  @include onBigPhone {
+    display: none;
+  }
+}
+
+.about__us--img {
+
+  @include onTablet {
+    width: 260px;
+    object-fit: cover;
+  }
+}
+
+// #endregion
+// #endregion
+// #region tech 
+.tech {
+  background-color: #05040B;
+}
+
+.tech__title {
+  display: flex;
+  font-size: 36px;
+  padding: 100px 165px 0 0;
+
+  @include onTablet {
+    font-size: 21px;
+    justify-content: flex-start !important; 
+    margin-left: 32px;
+  }
+
+  @include onBigPhone {
+    padding: 20px 165px 0 0;
+  }
+}
+
+.tech__title--1 {
+  font-weight: 900;
+  color: $white;
+}
+
+.tech__title--2 {
+  margin-left: 10px;
+  font-weight: 400;
+  color: $contrast-color;
+}
+
+.specs__body {
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  margin: 80px 0 0 0;
+
+  @include onTablet {
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 82px;
+    margin: 40px 0 0 0;
+  }
+}
+
+.sensor {
+  margin: -10px 0 0 50px;
+
+  @include onTablet {
+    display: none;
+  }
+}
+
+.batteries-title,
+.sensor-title,
+.connection-title {
+  font-size: 18px;
+  font-weight: 900;
+  color: $white;
+  margin-bottom: 21px;
+}
+
+.sensor-description,
+.batteries-description,
+.connection-description {
+  font-size: 16px;
+  font-weight: 400;
+  color: $text-color;
+}
+
+.batteries-description {
+  max-width: 338px;
+}
+
+.sensor-description {
+  max-width: 250px;
+}
+
+.battery {
+  margin: -10px 80px 0 0;
+
+  @include onTablet {
+    display: none;
+  }
+}
+
+.sensor-img,
+.battery-img {
+  position: absolute;
+  z-index: 2;
+}
+
+.sensor-img {
+  left: 139px;
+
+  @include onTablet {
+    display: none;
+  }
+}
+
+.battery-img {
+  left: 550px;
+
+  @include onTablet {
+    display: none;
+  }
+}
+
+.vr-img {
+  position: absolute;
+  margin-top: 50px;
+  left: 395px;
+  right: 0;
+  z-index: 0;
+
+  @include onTablet {
+    position: inherit;
+    left: 0;
+    right: 0;
+  }
+}
+
+.connection__body {
+  display: flex;
+  position: relative;
+  padding-bottom: 115px;
+
+  @include onTablet {
+    display: none;
+  }
+}
+
+.connection-text {
+  margin: 74px 0 0 110px;
+}
+
+.connection-description {
+  max-width: 241px;
+}
+
+.connection-img {
+  margin: 0 0 80px 0;
+  position: absolute;
+  left: 251px;
+  bottom: 140px;
+}
+
+.ecliple-img {
+  position: absolute;
+  left: 387px;
+  bottom: 175px;
+}
+// #endregion
+// #region benefits
+.benefits {
+  background: linear-gradient(109deg, #191536 0%, #000 77.34%);
+}
+
+.benefits-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  @include onTablet {
+    justify-content: left;
+    align-items: flex-start;
+  }
+}
+
+.benefits-title {
+  display: flex;
+  font-size: 36px;
+  margin-top: 100px;
+
+  @include onTablet {
+    font-size: 21px;
+    margin-left: 38px;
+
+    @include onBigPhone {
+      margin-top: 20px;
+    }
+  }
+}
+
+.benefits-title--1 {
+  font-weight: 900;
+  color: $white;
+}
+
+.benefits-title--2 {
+  font-weight: 400;
+  color: $contrast-color;
+  margin-left: 10px;
+}
+
+.card--benefits {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 84px 0 0 0;
+  display: flex;
+  
+  @include onBigPhone {
+    margin: 24px 0 0 0;
+  }
+}
+
+.cards__description {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.card__description {
+  max-width: 220px;
+}
+
+.card__description--universally,
+.card__description--vr,
+.card__description--wireless {
+  max-width: 340px;
+}
+
+.buy__button {
+  margin: 0 0 102px 0;
+}
+// #endregion
+// #region contacts
+.contacts {
+  background-color: #05040B;
+}
+
+.contacts-container {
+  display: flex;
+  justify-content: space-between;
+
+  @include onBigPhone {
+    flex-direction: column;
+    // justify-content: center;
+    // align-items: center;
+  }
+}
+
+.contacts-text {
+  margin-top: 103px;
+
+  @include onTablet {
+    margin: 70px 0 0 20px;
+  }
+
+  @include onBigPhone {
+   display: flex;
+   flex-direction: column;
+   margin: 70px 0 0 0;
+  }
+}
+
+.questions {
+  color: $contrast-color;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.contacts-title {
+  display: flex;
+  font-size: 36px;
+  margin-bottom: 26px;
+
+  @include onTablet {
+    font-size: 21px;
+  }
+}
+
+.contacts-title--1 {
+  color: $white;
+  font-weight: 900;
+}
+
+.contacts-title--2 {
+  margin-left: 10px;
+  font-weight: 400;
+  color: $contrast-color;
+}
+
+.message-text,
+.number,
+.email--1, 
+.email--2 {
+  font-size: 16px;
+  font-weight: 400;
+  color: $text-color;
+}
+
+.number,
+.email--1, 
+.email--2  {
+  @include onBigPhone {
+    display: none;
+  }
+}
+
+.message-text {
+  margin-bottom: 76px;
+
+  @include onBigPhone {
+    display: none;
+  }
+}
+
+.message-text__contact {
+  display: none;
+  font-size: 16px;
+  font-weight: 400;
+  color: $text-color;
+
+  @include onBigPhone {
+    display: flex;
+    font-size: 12px;
+    margin: 27px 0 0 35px;
+  }
+}
+
+.contact-form {
+  margin: 103px 0 100px 0;
+  max-width: 521px;
+
+  @include onTablet {
+    max-width: 340px;
+    margin-right: 20px;
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+input,
+textarea {
+  border: 0;
+  outline: 0;
+  background-color: #05040B;
+  margin-bottom: 24px;
+  color: $white;
+  resize: none;
+}
+
+.form-label {
+  position: relative;
+}
+
+.contact-form {
+  @include onBigPhone {
+    margin: 10px 0 100px 0;
+    order: 1;
+  }
+}
+
+.form-label::after {
+  content: '';
+  position: absolute;
+  height: 1px;
+  width: 100%;
+  background-color: $text-color;
+  display: block;
+  bottom: 15px;
+  box-sizing: border-box;
+}
+
+.form-label-message::after {
+  bottom: 49px;
+}
+
+::placeholder {
+  font-size: 14px;
+  font-weight: 400;
+  color: $text-color;
+}
+
+.contact__button {
+  margin: 0 0 0 0;
+
+  @include onTablet {
+    display: inherit;
+    width: 200px;
+  }
+}
+
+.contact-buttons {
+  display: flex;
+  justify-content: space-between;
+
+  @include onBigPhone {
+    justify-content: center;
+  }
+}
+
+.arrow-up {
+  margin-left: 270px;
+
+  @include onTablet {
+    margin-left: 50px;
+  }
+
+  @include onBigPhone {
+    display: none;
+  }
+}
+
+// #endregion
+// #region footer
+.footer {
+  background-color: #000;
+  padding: 43px 0 43px 0;
+}
+
+.footer-wrapper {
+  display: flex;
+
+  @include onBigPhone {
+    flex-direction: column;
+  }
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 34px;
+}
+
+.nav__list {
+  list-style: none;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav__list--footer {
+  margin-bottom: 0;
+  margin-left: 300px;
+
+  @include onBigPhone {
+    margin: 15px 0 0 0;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 0;
+  }
+}
+
+.nav__item--footer {
+  margin-right: 43px;
+
+  @include onBigPhone {
+    margin: 0 0 12px 0;
+  }
+}
+
+.nav__item--footer-contacts {
+  margin: 0;
+}
+
+.nav__link {
+  text-decoration: none;
+  color: #F2F2F2;
+
+  @include onBigPhone {
+    font-size: 13px;
+  }
+}
+
+.text-mobile {
+  display: none;
+
+  @include onBigPhone {
+    display: flex;
+    flex-direction: column;
+    margin: 35px 0 10px 0;
+  }
+}
+
+.number__footer,
+.email--1__footer,
+.email--2__footer {
+  display: inherit;
+  margin-bottom: 12px;
+  font-size: 13px;
+}
+
+.social__block {
+  display: flex;
+  flex-direction: column;
+}
+
+.social__wrapper {
+  display: flex;
+}
+
+.social {
+  margin-right: 30px;
+}
+
+.social__reddit {
+  margin: 0;
+}
+// #endregion
+
+// #region buy-page
+.body-buy {
+  background: linear-gradient(108deg, #191536 0%, #000 100%);
+}
+// #region header
+.container-buy {
+  display: flex;
+  justify-content: space-between;
+
+  @include onTablet {
+    padding: 0 34px;
+  }
+
+  @include onBigPhone {
+    position: relative;
+    margin-top: 20px;
+  }
+}
+
+.header-buy {
+  margin-top: 65px;
+}
+
+.logo-img {
+
+  @include onBigPhone {
+    position: absolute;
+    bottom: 45px;
+  }
+}
+
+.page__link {
+  font-size: 14px;
+  font-weight: 500;
+  color: $text-color;
+  text-decoration: none;
+
+  @include onBigPhone {
+    font-size: 12px;
+    
+  }
+}
+
+.page__link.active {
+  color: $contrast-color;
+  background-image: url(/src/images/dot.svg);
+  background-repeat: no-repeat;
+  height: 29px;
+  background-position: 37px 20px;
+  margin-top: 5px;
+}
+
+.page__link--complete {
+  margin-right: 100px;
+
+  @include onBigPhone {
+    margin: 0 0 0 0;
+  }
+}
+// #endregion
+// #region data
+.container-data {
+  justify-content: space-between;
+}
+
+.section-wrapper {
+  padding: 115px 0 185px 0;
+  display: flex;
+
+  @include onTablet {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  @include onBigPhone {
+    padding-bottom: 30px;
+  }
+}
+
+.kateVR-img {
+  object-fit: cover;
+  margin-left: -100px;
+
+  @include onTablet {
+    margin-left: 0;
+  }
+
+  @include onBigPhone {
+    display: none;
+  }
+}
+
+.form-1 {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: left;
+  margin-right: 30px;
+
+  @include onTablet {
+    width: 100%;
+  }
+}
+
+.county-choose,
+.city-choose {
+  color: $text-color;
+  font-size: 14px;
+  font-weight: 400;
+  text-align: left;
+  padding-left: 5px;
+}
+
+.form-2 {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: left;
+
+  @include onTablet {
+    width: 100%;
+  }
+}
+
+.form-buy {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+
+  @include onTablet {
+    margin: 50px 0 0 0;
+    padding: 0 34px;
+  }
+
+  @include onBigPhone {
+    flex-direction: column;
+  }
+}
+
+.dropdown {
+  width: 5%;
+}
+
+input {
+  border: 0;
+  outline: 0;
+  background: none;
+  margin-bottom: 30px;
+}
+
+.label {
+  position: relative;
+  width: 100%;
+  font-size: 14px;
+  font-weight: 400;
+  color: $text-color;
+}
+
+.label-dropdown {
+  font-size: 14px;
+  font-weight: 400;
+  color: $text-color;
+}
+
+.label::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  background-color: $text-color;
+  top: 39px;
+}
+
+.btn-list::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  background-color: $text-color;
+  top: 38px;
+  left: 0;
+}
+
+.btn-list {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.arrow-list--country {
+  margin-top: -50px;
+}
+
+.arrow-list {
+  margin-left: 200px;
+}
+
+.dropdown-menu.show {
+  background: linear-gradient(108deg, #191536 0%, #000 100%);
+  width: 100%;
+} 
+
+.dropdown-item {
+  color: $white;
+  cursor: pointer;
+}
+
+.dropdown-item:hover {
+  background-color: inherit;
+  color: $white;
+}
+
+.dropdown-item:active {
+  background-color: inherit;
+}
+
+.button-next {
+  margin: 68px 0 0 0;
+
+  @include onTablet {
+    display: inherit;
+    width: 100%;
+    margin-left: 150px;
+  }
+}
+
+.button-next--mob {
+  display: none;
+
+  @include onBigPhone {
+    display: flex;
+    margin: 40px 0 0 0;
+  }
+}
+
+.button-next--desk {
+  @include onBigPhone {
+    display: none;
+  }
+}
+
+.quanity-price {
+  display: flex;
+  margin-left: 50px;
+
+  @include onTablet {
+    margin-left: 0;
+  }
+}
+
+.dropdown-quanity {
+  margin-top: 20px;
+}
+
+.btn-list-quanity {
+  background-color: #191536;
+  font-size: 20px;
+  font-weight: 400;
+  color: $white;
+}
+
+.dropdown-menu--quanity.show {
+  color: $white;
+  outline: 0;
+  border: 0;
+}
+
+.btn-list-quanity::after {
+  height: 0;
+}
+
+.dropdown-menu--quanity {
+  width: 100px;
+}
+
+.dropdown-item--quanity {
+  margin: 0;
+  width: 50px;
+}
+
+.arrow-list--quanity {
+  margin-left: 20px;
+}
+
+.price {
+  margin-left: 116px;
+}
+
+.price-number {
+  font-size: 36px;
+  font-weight: 500;
+  color: $contrast-color;
+
+  @include onBigPhone {
+    font-size: 20px;
+  }
+}
+// #endregion
+// #endregion
+
+// #region checkout-page
+.label-card::after {
+  height: 0;
+}
+
+.form-checkout {
+
+  @include onTablet {
+    padding: 0 150px;
+    margin-right: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  @include onBigPhone {
+    padding: 0 10px;
+    max-width: 280px;
+  }
+}
+
+.card {
+  background: none;
+  margin-top: 20px;
+
+  @include onBigPhone {
+    padding: 0 10px;
+    max-width: 280px;
+  }
+}
+
+.card-text {
+  position: relative;
+  right: 220px;
+  margin-bottom: 20px;
+  font-size: 14px;
+  font-weight: 400;
+  color: $contrast-color;
+
+  @include onTablet {
+    margin-left: 90px;
+  }
+
+  @include onBigPhone {
+    margin-left: 275px;
+    white-space: nowrap;
+  }
+}
+
+.card-fields {
+  display: flex;
+}
+
+.card-field {
+  width: 60%;
+  
+  @include onBigPhone {
+    width: 30%;
+    margin-right: 0;
+  }
+}
+
+.card-field::placeholder {
+  color: #2F2F2F;
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: 4px;
+
+  @include onBigPhone {
+    font-size: 16px;
+    letter-spacing: 2px;
+  }
+}
+
+.card-number {
+  position: relative;
+}
+
+.card-number::after {
+  content: '';
+  position: absolute;
+  height: 1px;
+  background-color: $text-color;
+  width: 65px;
+  left: 0;
+  top: 30px;
+
+  @include onBigPhone {
+    width: 50px;
+  }
+}
+
+.label-checkout {
+  position: relative;
+  width: 100%;
+}
+
+.label-checkout::after {
+  content: '';
+  height: 1px;
+  width: 87%;
+  position: absolute;
+  background-color: $text-color;
+  bottom: -40px;
+
+  @include onBigPhone {
+    bottom: -70px;
+  }
+}
+
+.cardholder {
+  width: 100%;
+
+  @include onBigPhone {
+    margin-top: 30px;
+  }
+}
+
+.label-exp {
+  position: relative;
+  font-size: 14px;
+  font-weight: 400;
+  color: $text-color;
+  margin-bottom: 20px;
+}
+
+.label-exp::after {
+  content: '';
+  position: absolute;
+  height: 1px;
+  background-color: $text-color;
+  width: 33%;
+  bottom: -50px;
+  left: 0;
+}
+
+.exp-date {
+  display: flex;
+  flex-direction: column;
+}
+
+.label-cvv {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.label-cvv::after {
+  position: absolute;
+  content: '';
+  height: 1px;
+  width: 45px;
+  top: 72px;
+  background-color: $text-color;
+}
+
+.date-cvv {
+  display: flex;
+  margin-top: 20px;
+
+  @include onTablet {
+    margin-right: 90px;
+  }
+
+  @include onBigPhone {
+    margin: 30px 35px 0 0;
+    max-width: 220px;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+}
+
+.cvv {
+  margin-top: 45px;
+}
+
+.button-purchase {
+
+  @include onTablet {
+    margin-left: 0;
+    width: 75%;
+  }
+}
+// #endregion
+
+// #region thanks!
+.main-thanks {
+  padding-bottom: 300px;
+}
+.container-thanks {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.thanks-text {
+  font-size: 46px;
+  font-weight: 900;
+  color: $white;
+  text-transform: uppercase;
+  margin: 150px 0 0 0;
+  line-height: 130%;
+
+  @include onTablet {
+    text-align: center;
+  }
+
+  @include onBigPhone {
+    font-size: 26px;
+  }
+}
+
+.your {
+  font-weight: 400;
+  color: $contrast-color;
+}
+
+.order-details {
+  font-size: 18px;
+  font-weight: 400;
+  color: $white;
+  margin-top: 36px;
+
+
+  @include onTablet {
+    text-align: center;
+  }
+}
+
+.button-thanks {
+  margin-left: 0;
+
+  @include onBigPhone {
+    width: 75%;
+  }
+}
+// #endregion
+
